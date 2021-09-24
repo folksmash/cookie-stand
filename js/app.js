@@ -120,13 +120,13 @@ let bottomtotals = document.createElement('tr')
         cellEl.innerText = 'Total by hour'
         bottomtotals.appendChild(cellEl)
         parentEL.appendChild(bottomtotals)
-        // console.log(sum)
-        for (let k = 5; k < 10; k++) {
+
+        for (let k = 0; k < sum.length; k++) {
             
-        // let bottomnumers = document.createElement('td')
-        // bottomnumers.innerText = this.sum[k];
-        // bottomtotals.appendChild(bottomnumers);
-        console.log()
+        let bottomnumers = document.createElement('td')
+        bottomnumers.innerText = sum[k];
+        bottomtotals.appendChild(bottomnumers);
+
         }
         
         // bottomnumers.innerText = this.sum;
