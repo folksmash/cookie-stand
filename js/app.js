@@ -26,7 +26,7 @@ EachStand.prototype.avgCust = function() {
     return Math.floor(Math.random()*((this.maxCust-this.minCust)+1) + this.minCust * this.avgcookies);
 
     
-};
+}
 
 EachStand.prototype.cookieSold = function(){
         for (let i = 0; i < hours.length; i++){
@@ -82,16 +82,17 @@ new EachStand('Dubai', 11, 38, 3.7)
 new EachStand('Paris', 20, 38, 2.3)
 new EachStand('Lima', 2, 16, 4.6)
 //console.log(allStands)
-
+let sum = allStands[0].sold;
 function totalSales(){
 
-    let sum = allStands[0].sold;
+    // let sum = allStands[0].sold;
     for (let city = 1; city < allStands.length; city++){
 
     for (let hour = 0; hour < hours.length; hour++){
         
         sum[hour] += allStands[city].sold[hour];
-        console.log(sum)
+        
+        //console.log(sum)
         
         
     }
@@ -101,12 +102,22 @@ function totalSales(){
 }
 
 }  
-let bottomtotals = document.createElement('td')
-        bottomtotals.innerText = 'Total by hour'
+let bottomtotals = document.createElement('tr')
+        let cellEl = document.createElement('td')
+        cellEl.innerText = 'Total by hour'
+        bottomtotals.appendChild(cellEl)
         parentEL.appendChild(bottomtotals)
-        let bottomnumers = document.createElement('td')
-        bottomnumers.textContent = this.sum;
-        parentEL.appendChild(bottomnumers)
+        // console.log(sum)
+        for (let k = 5; k < 10; k++) {
+            
+        // let bottomnumers = document.createElement('td')
+        // bottomnumers.innerText = this.sum[k];
+        // bottomtotals.appendChild(bottomnumers);
+        console.log()
+        }
+        
+        // bottomnumers.innerText = this.sum;
+        
 
 function renderStands(){
     for(let i = 0; i < allStands.length; i++){
