@@ -102,6 +102,19 @@ function totalSales(){
 }
 
 }  
+        
+
+function renderStands(){
+    for(let i = 0; i < allStands.length; i++){
+        allStands[i].listSales();
+    }
+}
+renderStands()
+totalSales()
+
+// This has to occur after renderStands() and totalStands() since they create 'sum' used below.
+// Also changed from this.sum[k] to sum[k].
+// Those were the only two necessary changes needed to get the bottom totals row to show.
 let bottomtotals = document.createElement('tr')
         let cellEl = document.createElement('td')
         cellEl.innerText = 'Total by hour'
@@ -117,15 +130,6 @@ let bottomtotals = document.createElement('tr')
         }
         
         // bottomnumers.innerText = this.sum;
-        
-
-function renderStands(){
-    for(let i = 0; i < allStands.length; i++){
-        allStands[i].listSales();
-    }
-}
-renderStands()
-totalSales()
 
 
 //console.log(totalArray.length)
