@@ -49,7 +49,7 @@ EachStand.prototype.listSales = function(){
         titleWord.textContent = this.city
         tableEl.appendChild(titleWord);
         for (let i = 0; i < this.sold.length; i++) {
-//console.log(this.sold[i])
+
         let salesEL = document.createElement('td');
         salesEL.textContent = this.sold[i];
         tableEl.appendChild(salesEL);
@@ -59,6 +59,7 @@ EachStand.prototype.listSales = function(){
         sumtotal.textContent = 'Total number of cookies sold today ' + this.totalcookies
         tableEl.appendChild(sumtotal)
     parentEL.appendChild(tableEl)
+
 
 }
 
@@ -83,46 +84,39 @@ new EachStand('Lima', 2, 16, 4.6)
 //console.log(allStands)
 
 function totalSales(){
-for (let hour = 0; hour < hours.length; hour++){
-    let sum = 0;
-for (let city = 0; city < allStands.length; city++){
 
-sum += allStands[city].sold[hour];
-// console.log(sum);
-console.log(allStands[city])
+    let sum = allStands[0].sold;
+    for (let city = 1; city < allStands.length; city++){
+
+    for (let hour = 0; hour < hours.length; hour++){
+        
+        sum[hour] += allStands[city].sold[hour];
+        console.log(sum)
+        
+        
+    }
+    
+
 
 }
 
-
-}
-}
-
-
-    
-    
-    
-    
-    
-// let totalEl = document.createElement('tfoot')
-//     // outer loop
-//        for (let i = 0; i < 14; i++){
-//            console.log(totalArray[i])
-//            //inner loop
-//            for (let j = 0; j > 5; j++){
-//             //console.log(j)
-//             console.log(totalArray[i][j])
-//            }
-//         }
-
+}  
+let bottomtotals = document.createElement('td')
+        bottomtotals.innerText = 'Total by hour'
+        parentEL.appendChild(bottomtotals)
+        let bottomnumers = document.createElement('td')
+        bottomnumers.textContent = this.sum;
+        parentEL.appendChild(bottomnumers)
 
 function renderStands(){
     for(let i = 0; i < allStands.length; i++){
         allStands[i].listSales();
     }
 }
-
-totalSales()
 renderStands()
+totalSales()
+
+
 //console.log(totalArray.length)
 //global variables end
 
