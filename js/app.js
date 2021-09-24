@@ -82,16 +82,37 @@ new EachStand('Paris', 20, 38, 2.3)
 new EachStand('Lima', 2, 16, 4.6)
 //console.log(allStands)
 
-let totalEl = document.createElement('tfoot')
-    // outer loop
-       for (let i = 0; i < 14; i++){
-           console.log(totalArray[i])
-           //inner loop
-           for (let j = 0; j > 5; j++){
-            //console.log(j)
-            console.log(totalArray[i][j])
-           }
-        }
+function totalSales(){
+for (let hour = 0; hour < hours.length; hour++){
+    let sum = 0;
+for (let city = 0; city < allStands.length; city++){
+
+sum += allStands[city].sold[hour];
+// console.log(sum);
+console.log(allStands[city])
+
+}
+
+
+}
+}
+
+
+    
+    
+    
+    
+    
+// let totalEl = document.createElement('tfoot')
+//     // outer loop
+//        for (let i = 0; i < 14; i++){
+//            console.log(totalArray[i])
+//            //inner loop
+//            for (let j = 0; j > 5; j++){
+//             //console.log(j)
+//             console.log(totalArray[i][j])
+//            }
+//         }
 
 
 function renderStands(){
@@ -99,6 +120,8 @@ function renderStands(){
         allStands[i].listSales();
     }
 }
+
+totalSales()
 renderStands()
 //console.log(totalArray.length)
 //global variables end
