@@ -7,6 +7,7 @@ const totalArray = [];
 //global variables end
 
 
+
 // cookstand constructor
 // location, min/max cookies, avg cookies, total cookies
 
@@ -102,21 +103,6 @@ function totalSales(){
 }
 
 }  
-let bottomtotals = document.createElement('tr')
-        let cellEl = document.createElement('td')
-        cellEl.innerText = 'Total by hour'
-        bottomtotals.appendChild(cellEl)
-        parentEL.appendChild(bottomtotals)
-        // console.log(sum)
-        for (let k = 5; k < 10; k++) {
-            
-        // let bottomnumers = document.createElement('td')
-        // bottomnumers.innerText = this.sum[k];
-        // bottomtotals.appendChild(bottomnumers);
-        console.log()
-        }
-        
-        // bottomnumers.innerText = this.sum;
         
 
 function renderStands(){
@@ -125,7 +111,29 @@ function renderStands(){
     }
 }
 renderStands()
-totalSales()
+totalSales()    
+  
+
+
+
+// This has to occur after renderStands() and totalStands() since they create 'sum' used below.
+// Also changed from this.sum[k] to sum[k].
+// Those were the only two necessary changes needed to get the bottom totals row to show.
+let bottomtotals = document.createElement('tr')
+        let cellEl = document.createElement('td')
+        cellEl.innerText = 'Total by hour'
+        bottomtotals.appendChild(cellEl)
+        parentEL.appendChild(bottomtotals)
+
+        for (let k = 0; k < sum.length; k++) {
+            
+        let bottomnumers = document.createElement('td')
+        bottomnumers.innerText = sum[k];
+        bottomtotals.appendChild(bottomnumers);
+
+        }
+        
+        // bottomnumers.innerText = this.sum;
 
 
 //console.log(totalArray.length)
